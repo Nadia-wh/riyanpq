@@ -226,9 +226,10 @@ function draw() {
     gameState = 0
     gameover.visible = true
   }
-  if(keyDown(RIGHT_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0 && player.overlapPoint(touches[0].x, touches[0].y)){
+  if(keyDown(RIGHT_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0){
     if (camera.position.x >= 1150 || touches.length > 0){
-      camera.position.x -= 10
+      camera.position.x -= 10;
+      touches=[0]
     }
     if (player.position.x >= 290){
       camera.position.x += 10
@@ -239,9 +240,10 @@ function draw() {
     touches = [0]
 
   }
-  if (keyDown(UP_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0 && player.overlapPoint(touches[0].x, touches[0].y)){
+  if (keyDown(UP_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0){
     if (camera.position.y >= -990 || touches.length > 0){
       camera.position.y -= 10
+      touches=[0]
     }
     if (player.position.y >= -1239){
       player.position.y -= 10
@@ -255,9 +257,10 @@ function draw() {
     touches = [0]
   }
 
-  if(keyDown(DOWN_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0 && player.overlapPoint(touches[0].x, touches[0].y)){
+  if(keyDown(DOWN_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0){
     if (camera.position.y <= 1771 || touches.length > 0){
       camera.position.y += 10
+      touches=[0]
     }
     if (player.position.y <= 2021){
       player.position.y += 10
@@ -273,9 +276,10 @@ function draw() {
 
 
 
-  if(keyDown(LEFT_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0 && player.overlapPoint(touches[0].x, touches[0].y)){
+  if(keyDown(LEFT_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0 ){
     if (camera.position.x >= 290 || touches.length > 0){
       camera.position.x -= 10
+      touches=[0]
     }
     if (player.position.x >= 1150){
       camera.position.x += 10
