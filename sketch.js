@@ -226,6 +226,7 @@ function draw() {
     gameState = 0
     gameover.visible = true
   }
+  //this is first condition only this is working 
   if(keyDown(RIGHT_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0){
     if (camera.position.x >= 1150 || touches.length > 0){
       camera.position.x -= 10;
@@ -240,13 +241,14 @@ function draw() {
     touches = [0]
 
   }
+  
   if (keyDown(UP_ARROW) && gameState != 0 && gameState != 4 && gameState != 3 || touches.length > 0){
     if (camera.position.y >= -990 || touches.length > 0){
-      camera.position.y -= 10
+      camera.position.y = -10
       touches=[0]
     }
     if (player.position.y >= -1239){
-      player.position.y -= 10
+      player.position.y = -10//decreasing by 10 pixel try doing this
     }
     if (player.position.y >= 1771){
       camera.position.y += 10
@@ -262,7 +264,7 @@ function draw() {
       camera.position.y += 10
       touches=[0]
     }
-    if (player.position.y <= 2021){
+    if (player.position.y <= 2021){     
       player.position.y += 10
     }
     if (player.position.y <= -990){
